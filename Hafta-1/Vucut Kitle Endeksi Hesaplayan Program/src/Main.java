@@ -1,22 +1,28 @@
 import java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //ihtiyac duyulan değişkenleri tanımlıyoruz
-        double kg, m, vkIndex;
 
-        /*Dışarıdan veri almak için scanner nesnesi tanımlayarak, kullancıdan veri istiyoruz
-         ve aldıgımız değerleri değişkenlere  atıyoruz.*/
-        Scanner input = new Scanner(System.in);
-        System.out.print("Lütfen boyunuzu (metre cinsinden) giriniz : ");
-        m = input.nextDouble();
+        // Firs off, we should name our Scanner class in order to get the weight and height values from the user
+        Scanner entry = new Scanner(System.in);
+
+        // Now let's get the height value from the user
+        System.out.print("Lütfen boyunuzu (metre cinsinde) giriniz : ");
+        double height;
+        height = entry.nextDouble();
+
+        // Now let's get the weight value from the user
         System.out.print("Lütfen kilonuzu giriniz : ");
-        kg = input.nextDouble();
+        int weight = entry.nextInt();
 
-        // Formül ile vucut kitle endeksini hesaplıyoruz ve ekrana yazdırıyoruz.
-        vkIndex = (kg)/(m*m);
-        System.out.println("Vücut Kitle İndeksiniz : " + vkIndex);
+        // Calculation of BMI
+        double  BMI = weight / (height * height);
+
+        System.out.print("Vücut Kitle İndeksiniz: "+ BMI);
+
+
+
+
+
 
 
 
