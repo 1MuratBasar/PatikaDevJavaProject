@@ -17,7 +17,7 @@ public class Main {
         System.out.print("c sayısını giriniz : ");
         c = input.nextInt();
         // işlem adımlarına ayırıp, sonuc hesaplatıp bunu yazdırıyoruz.
-        result = (a+(b*c)-b);
+        result = (a+b*c-b);
         System.out.println("Sonuc : " + result);
     }
 
