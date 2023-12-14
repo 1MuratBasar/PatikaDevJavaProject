@@ -31,9 +31,8 @@ public class Main
         // farklı bir değer de olsa sonuç string döner.
 
         boolean kosul1 = ortalama >= 60;
-        boolean kosul2 = ortalama < 60;
-          boolean sonuc = kosul1 || kosul2;
-      String str = sonuc ? "Sınıfı Geçti" : "Sınıfta Kaldı";
+
+      String str = kosul1 ? "Sınıfı Geçti" : "Sınıfta Kaldı";
         System.out.println(str);
 
 
