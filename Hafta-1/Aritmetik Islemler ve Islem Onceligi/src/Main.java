@@ -19,6 +19,7 @@ public class Main {
         // işlem adımlarına ayırıp, sonuc hesaplatıp bunu yazdırıyoruz.
         result = (a+b*c-b);
         System.out.println("Sonuc : " + result);
+        System.out.println("islem onceligi: a+b*c-b dir");
     }
 
 }
