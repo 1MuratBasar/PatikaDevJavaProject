@@ -1,67 +1,71 @@
-import java.time.Year;
 import java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        // kullanıcı adı ve şifre için gerekli string değişken tanımlıyoruz.
+        String username, pass1, pass2, pass3, pass4, choise; // yeni kayıtlar
+        String user = "Patika"; //veritabanında kayıtlı
+        String pass = "Dev123"; // veritabanında kayıtlı
 
-        String userName, password, password2, request;
-        char a;
-
-        // scanner nesnesi ile dışarıdan kullanıcı adı ve şifre aldıracağız.
         Scanner input = new Scanner(System.in);
+        System.out.print("Kullanıcı Adı Giriniz : ");
+        username = input.nextLine();
 
-        System.out.print("Kullanıcı adı giriniz : ");
-        userName = input.nextLine();
+        System.out.print("Şifre Giriniz : ");
+        pass1 = input.nextLine();
 
-        System.out.print("Sifre giriniz : ");
-        password = input.nextLine();
 
-        //kullanıcı adı ve şifreyi aldık şimdi doğruluk sorgulayacağız.
-        if (userName.equals("Patika") && password.equals("Dev123")) {
-            System.out.println("Sifre Doğru, giriş yaptınız.");
+        // dışarıdan verileri aldık şimdi sıra sorgulama
 
-        } else {
-            System.out.println("Yanlış şifre girdiniz.");
+        if (!(username.equals(user)) && (pass1.equals(pass))) {
+            System.out.println("Kullanıcı Adı veya Şifre Yanlış.");
 
+        } if ((username.equals(user)) && (pass1.equals(pass))) {
+            System.out.println("Giriş yaptınız, yönlendiriliyorsunuz.");
+            System.exit(2); // şifre dogruysa aşağıdaki bloğu çalıştırmaya gerek duymuyoruz.
         }
-        System.out.println("Şifrenizi sıfırlamak ister misniz?");
+
+
+        System.out.println("Şifrenizi sıfırlamak ister misiniz?");
         System.out.println("Y/N");
-        a = input.next().charAt(0);
+        choise = input.nextLine();
+        // Kullanıcıdan Y veya N değeri ile seçeneğe bağlı şifre ürettiyor , bunu sorguluyor ya da çıkıyoruz.
+        switch (choise) {
 
-        String password3="";
-        switch (a) {
-            case 'Y':
-                System.out.println("Yeni Sifre giriniz : ");
-                input.nextLine();
-                password2 = input.nextLine();
+            case "Y":
 
-                //kullanıcı adı ve şifreyi aldık şimdi önceki şifre ile doğruluk sorgulayacağız.
-                if (password2.equals("Dev123")) {
-                    System.out.println("Eski şifre ile aynı olmamalıdır.");
-                    System.out.println("Tekrar deneyin");
-                    password3 = input.nextLine();
+                System.out.println("Yeni şifrenizi giriniz");
+                pass2 = input.nextLine();
+                System.out.println("Yeni şifreniz " + pass2 );
 
-                } else if (password3.equals("Dev123")) {
-                    System.out.println("Eski şifre ile aynı olmamalıdır. tekrar deneyin.");
-                }else {
+                if (pass2.equals(pass)) {
+                    System.out.println("Şifreniz geçmiş şifreleriniz ile aynı olmamalıdır!");
+                    System.out.println(" Tekrar deneyiniz");
+                    pass3 = input.nextLine();
+                    if (pass3.equals(pass)) {
+                        System.out.println("Şifreniz geçmiş şifreleriniz ile aynı olmamalıdır!");
+                        System.out.println(" Tekrar deneyiniz");
+                        pass4 = input.nextLine();
+                        if (pass4.equals(pass)) {
+                            System.out.println("Şifreniz geçmiş şifreleriniz ile aynı olmamalıdır!");
+                            System.out.println(" Çıkışa yönlendiriliyorsunuz");
+                        } else {
+                            System.out.println("Şifre Yanlış.");
+                        }}}
+                break;
 
-                    System.out.println("Yeni şifre ile giriş yaptınız");
+            case "N":
+                System.out.println("Çıkış yaptınız.");
+                break;
 
-
-                    break;
-                }
-                    case 'N':
-                        System.out.println("Çıkış Yaptınız. ");
-                        break;
-                    default:
-                        System.out.println("Y/N değeri giriniz");
-
-                }
-
+            default:
+                System.out.println("Y ya da N değeri giriniz");
+                break;
         }
 
 
     }
+
+}
+
+
+
