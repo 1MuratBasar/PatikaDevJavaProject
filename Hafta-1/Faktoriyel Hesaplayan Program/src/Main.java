@@ -12,13 +12,13 @@ public class Main {
         } else {
 
 
-            int total = 1;
-
-            for (int i = 1; i <= n; i++) {
-
-                total = total * i;
-            }
-            System.out.println("Girilen sayının faktoriyeli : " + total);
+        int total = 1;
+        int i=1;
+        while ( i <=n) {
+            total = total*i;
+            i++;
         }
+        System.out.println("Girilen sayının faktoriyeli : " + total);
+    }
     }
 }
