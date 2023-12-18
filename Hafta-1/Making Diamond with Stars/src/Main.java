@@ -19,14 +19,14 @@ public class Main
             System.out.print("*");
         }
         System.out.println(); // to move bottom row
-    } // üst kısım ok altı açıklayalım
-    // son yıldız serisinden sonra aşağıya n-1 kadar inmeli
-    //yani n değeri 6 girdiysem azalan yıldızlara geçtiğiginde artık 5 defa dönerek bitmeli
-    // o nedenle ilk dongunun başlangıc degerinin n-1 aldık ki 5 defa donsun
-    //ve hesaplamalara i yerine artık hep 5 ve azalan değerleri girecek
+    }
+    /*
+    üst kısım ok altı açıklayalım. Son yıldız serisinden sonra aşağıya n-1 kadar inmeli
+    yani n değeri 6 girdiysem azalan yıldızlara geçtiğiginde artık 5 defa dönerek bitmeli
+     o nedenle ilk dongunun başlangıc degerinin n-1 aldık ki 5 defa donsun ve hesaplamalara
+     i yerine artık hep 5 ve azalan değerleri girecek */
 
     for (i=n-1; i>=1; i--){ //loop a
-
 
         //örnegin ilk dönüşte k<=n-i ifadesinde i hep azaldığı için boşuklar az çoğa artıcak
         for (k=1; k<=n-i; k++) { // loop b
@@ -38,11 +38,7 @@ public class Main
             System.out.print("*");
         }
 
-
         System.out.println(); // to move bottom row
     }
-
-
-
 }
 }
