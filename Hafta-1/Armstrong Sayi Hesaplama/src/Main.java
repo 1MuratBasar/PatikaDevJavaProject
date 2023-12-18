@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
-        System.out.println("Bir sayı giriniz");
+        System.out.print("Bir sayı giriniz : ");
         int number = input.nextInt();
         int basNumber;
         int tempNumber;
@@ -29,11 +29,19 @@ Scanner input = new Scanner(System.in);
             for (int i=1; i<=basNumber; i++) {
 
                 basPow *= basValue; //burada basValue değeri yani moddan kalan üs kadar kendiyle carpıldı
+             //   basPow = basPow * basValue;
+
+
             }
-            result += basPow;
+            result += basPow; //
              tempNumber /= 10;
         }
+        if (result == number){
+            System.out.println(number + " sayısı bir Armstrong sayıdır.");
 
-        System.out.println(result);
+        } else {
+            System.out.println(number + " sayısı bir Armstrong sayı değildir.");
+
+        }
     }
 }
