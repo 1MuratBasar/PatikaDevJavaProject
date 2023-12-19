@@ -49,6 +49,7 @@ public class Main {
         if (age<12){
             rateofAgeDiscount = rateofAgeDiscountunder12;
         }else if (age <= 24) {
+            yeniindirim = 0.10
             rateofAgeDiscount = rateofAgeDiscountbetween12and24;
         } else if (age>65) {
             rateofAgeDiscount = rateofAgeDiscountbeton65;
