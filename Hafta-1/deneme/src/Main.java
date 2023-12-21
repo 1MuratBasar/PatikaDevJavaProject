@@ -1,21 +1,27 @@
 import java.util.Scanner;
 public class Main {
 
-    static int fibonacci (int number) {
+        public static void main(String[] args) {
+            int k;
+            int y;
+            Scanner input = new Scanner(System.in);
+            System.out.println("k sayısı gir");
+            k = input.nextInt();
+            y=k;
+            boolean isDecreasing = true;
 
-        if (number ==1 || number==2 || number <1) {
+            int sonuc = toplam(k,y,isDecreasing);
+            System.out.println(sonuc );
+        }
+        public static int toplam(int k, int y, boolean isDecreasing) {
+            if (k > 0) {
+                return k + toplam(k - 1, y-1, isDecreasing);
 
-            return 1;
-        }else {
-            return fibonacci(number-1) + fibonacci(number-2);
+            } else {
+                return 0;
+            }
         }
     }
 
 
-    public static void main(String args[]) {
 
-        System.out.println(fibonacci(-1));
-    }
-
-
-}
