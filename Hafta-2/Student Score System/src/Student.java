@@ -84,11 +84,15 @@ void addBulkExamNote (int tarihNote, int matNote, int fizikNote, int fzkSozlu, i
 
   void isPass (){
 
+      if (this.mat.note == 0 || this.fzk.note == 0 || this.tarih.note == 0) {
+          System.out.println("Notlar tam olarak girilmemiş");
+      } else {
 
-        this.avg = ((this.tarih.note + this.mat.note + this.fzk.note ) / 3.0);
+
+          this.avg = ((this.tarih.note + this.mat.note + this.fzk.note ) / 3.0);
 
         if (this.avg >= 50) {
-            System.out.println("Geçme durumu\t\t : " + "Sınıfı geçti");
+            System.out.println("Geçme durumu\t : " + "Sınıfı geçti");
             this.isPass = true;
         } else {
             System.out.println("Geçme durumu\t\t : " + "Sınıf tekrarı");
@@ -96,7 +100,7 @@ void addBulkExamNote (int tarihNote, int matNote, int fizikNote, int fzkSozlu, i
         }
             printNote();
       System.out.println("Dersler ort.\t\t : " + this.avg);
-  }
+  }}
     void printStu (){
         System.out.println("Adı : " + this.name);
         System.out.println("Öğrenci no : " + this.studentNo);
