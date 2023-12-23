@@ -15,6 +15,7 @@ public class Main {
         }
         public static int toplam(int k, int y, boolean isDecreasing) {
             if (k > 0) {
+
                 return k + toplam(k - 1, y-1, isDecreasing);
 
             } else {
