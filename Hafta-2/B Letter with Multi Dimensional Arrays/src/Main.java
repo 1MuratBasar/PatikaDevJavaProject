@@ -20,7 +20,7 @@
                     }
                 }
 
-                for (String[] row : letter){
+             for (String[] row : letter){
                     for (String col : row){
                         System.out.print(col);
                     }
