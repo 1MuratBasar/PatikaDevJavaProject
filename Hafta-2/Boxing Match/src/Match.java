@@ -23,12 +23,12 @@ public class Match {
                 System.out.println("=======YENİ ROUND=======");
 
 
-                    if (StartingChance()) {
-                      break;
-                    }
+                if (StartingChance()) {
+                    break;
+                }
 
-                    this.f2.health = this.f1.hit(this.f2);
-              //  }
+                this.f2.health = this.f1.hit(this.f2);
+                //  }
 
 
                 if (isWin()) {
@@ -38,7 +38,7 @@ public class Match {
                 if (StartingChance()) {
                     break;
                 }
-                   this.f1.health = this.f2.hit(this.f1);
+                this.f1.health = this.f2.hit(this.f1);
 
                 if (isWin()) {
 
@@ -76,16 +76,16 @@ public class Match {
         return false;
     }
 
-boolean StartingChance () {
+    boolean StartingChance () {
 
-    if (this.f1.whoStarts > this.f2.whoStarts) {
-        System.out.println(this.f1.name + " maça başladı");
-    } else {
+        if (this.f1.whoStarts > this.f2.whoStarts) {
+            System.out.println(this.f1.name + " maça başladı");
+        } else {
 
-        System.out.println(this.f2.name + " maça başladı");
+            System.out.println(this.f2.name + " maça başladı");
 
 
+        }
+        return false;
     }
-    return false;
-}
 }
