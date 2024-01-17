@@ -23,6 +23,7 @@ public class Main {
 
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
 
+
             if (entry.getValue() > count){
                 count = entry.getValue();
                 mostFrequent = entry.getKey();
