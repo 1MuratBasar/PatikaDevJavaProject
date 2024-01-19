@@ -64,10 +64,6 @@ insert into employee (id, name, birthday, email) values (50, 'Cherida', '1900-03
 
 3--Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
 
-(ister normalde satıra göre update yapılması gerekli ben her iki şekilde de ekliyorum.)
-
-SATIRA GÖRE UPDATE
---------------------------------------------------------------------------------------
 UPDATE employee
 SET
 name = 'UPDATED',
@@ -116,27 +112,7 @@ where
 id > 25
 and name ILIKE '%a'
 returning *;
-----------------------------------------------------------------------------------------
-SÜTUNA GÖRE UPDATE
-----------------------------------------------------------------------------------------
-UPDATE employee
-SET
-name ='Murat'
-where
-name = name;
-----------------------------------------------------------------------------------------
-UPDATE employee
-SET
-id ='1'
-where
-id = id;
-----------------------------------------------------------------------------------------
-UPDATE employee
-SET
-birthday ='01.05.2001'
-where
-birthday = birthday;
-----------------------------------------------------------------------------------------
+
 4--Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
 
 delete from employee
