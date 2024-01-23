@@ -1,1 +1,0 @@
-Java Öğreniyorum, bunu dosyay yazdıralım, Let create a file and write this words on file.
