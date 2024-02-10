@@ -31,6 +31,9 @@ public class AdminView extends Layout{
     private JLabel lbl_user_role;
     private JComboBox cmb_srch_role;
     private JButton btn_search;
+    private JButton btn_clear;
+    private JButton btn_list;
+    private JButton btn_exit;
     private User user;
     private DefaultTableModel tmdl_user = new DefaultTableModel();
     private Object[] col_user;
@@ -43,21 +46,39 @@ public class AdminView extends Layout{
         this.user = user;
         add(container);
         guiInitialize(1000,700);
-
+//***************************************************************************************************************************************
 
         if (this.user == null) {
             dispose();
         }
-
+//***************************************************************************************************************************************
+        //General Menus
         this.lbl_welcome.setText("Hoşgeldiniz : " + this.user.getUsername());
         loadUserTable(null);
         loadUserComponent();
 
+      //  loadHotelTable();
+      //  loadHotelComponent();
 
+//***************************************************************************************************************************************
+        //ÇIKIŞ
+        btn_exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+//***************************************************************************************************************************************
+
+        btn_clear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadUserTable(null);
+            }
+        });
     }
-
-
-
+//***************************************************************************************************************************************
+        //USER TABLOSU YUKLE
     public void loadUserTable (ArrayList<Object[]> userList) {
 
         //gui den jtable olusturduk
@@ -74,15 +95,11 @@ public class AdminView extends Layout{
         }
         createTable(this.tmdl_user, this.tbl_user, this.col_user, userList);
     }
+//***************************************************************************************************************************************
 
     public void loadUserComponent (){
         tableRowSelect(this.tbl_user);
         this.user_menu = new JPopupMenu();
-
-
-
-
-
         btn_user_add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,6 +122,8 @@ public class AdminView extends Layout{
                     }
                 }
                 loadUserTable(null);
+                fld_username.setText(null);
+                fld_password.setText (null);
                 }
         });
 
@@ -124,8 +143,8 @@ public class AdminView extends Layout{
 
         this.user_menu.add("Güncelle").addActionListener(e -> {
             int selectUserId = this.getTableSelectedRow(tbl_user,0);
-            UserView carView = new UserView(this.userManager.getById(selectUserId));
-            carView.addWindowListener(new WindowAdapter() {
+            UserView userView = new UserView(this.userManager.getById(selectUserId));
+            userView.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosed(WindowEvent e) {
                     loadUserTable(null);
@@ -136,6 +155,7 @@ public class AdminView extends Layout{
 
             this.tbl_user.setComponentPopupMenu(user_menu);
 
+//***************************************************************************************************************************************
 
             // arama yapma (constructor dan alıp user componenetin içinde yapıyoruz)
             btn_search.addActionListener(new ActionListener() {
@@ -148,6 +168,7 @@ public class AdminView extends Layout{
                     loadUserTable(searchedUserRowList);
                 }
             });
+//***************************************************************************************************************************************
 
 
         }

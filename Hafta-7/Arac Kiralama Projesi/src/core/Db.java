@@ -30,7 +30,7 @@ public class Db {
 
 //bağlantıya erişmek için static bir metot yazıyorum. bağlantıyı bu nesnenin içinde ureticem
  //bağlantı null sa ya da kapatılmıssa yeni bi bağlantı olustur ya da saten varsa return deki bağlanıtıy dondur
-    public static Connection getInstance() throws SQLException {
+    public static Connection getInstance() {
 
       try {
           if (instance == null || instance.getConnection().isClosed()) {

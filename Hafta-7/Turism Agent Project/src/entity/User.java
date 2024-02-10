@@ -6,17 +6,23 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private Role roling;
+
 
     public User(){
 
     }
 
-    public User(int id, String username, String password, String role) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    public enum Role {
+        ADMIN,
+        EMPLOYEE
     }
+  //  public User(int id, String username, String password, Role role) {
+  //      this.id = id;
+  //      this.username = username;
+    //    this.password = password;
+   //     this.role = role;
+   // }
 
     public int getId() {
         return id;
@@ -50,14 +56,20 @@ public class User {
         this.role = role;
     }
 
+    public Role getRoling() {
+        return roling;
+    }
 
+    public void setRoling(Role roling) {
+        this.roling = roling;
+    }
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
+                ", roling='" + roling + '\'' +
                 '}';
     }
 }

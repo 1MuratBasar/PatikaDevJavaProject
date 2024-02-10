@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import entity.User.Role;
 
 public class UserDao {
 
@@ -75,6 +76,11 @@ public class UserDao {
         obj.setUsername(rs.getString("user_name"));
         obj.setPassword(rs.getString("user_pass"));
         obj.setRole(rs.getString("user_role"));
+    //     obj.setRoling(User.Role.valueOf(rs.getString("model_type")));
+
+     //  obj.setRole(String.valueOf(Role.valueOf(rs.getString("user_role"))));
+
+      //  obj.setRole(String.valueOf(User.Role.valueOf(rs.getString("user_role"))));
         return obj;
     }
 
@@ -86,6 +92,7 @@ public class UserDao {
             pr.setString(1, newUser.getUsername());
             pr.setString(2, newUser.getPassword());
             pr.setString(3  , newUser.getRole());
+          //  pr.setString(3, newUser.getRoling().toString());
             //
             return pr.executeUpdate() !=-1;
         }catch (SQLException e) {
@@ -118,6 +125,7 @@ public class UserDao {
             pr.setInt(1, user.getId());
             pr.setString(2, user.getUsername());
             pr.setString(3, user.getPassword());
+           // pr.setString(4, user.getRoling().toString());
             pr.setString(4, user.getRole());
 
             return pr.executeUpdate() != -1;

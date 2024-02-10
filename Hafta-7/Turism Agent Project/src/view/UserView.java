@@ -3,8 +3,8 @@ package view;
 import business.UserManager;
 import core.ComboItem;
 import core.Helper;
+import dao.UserDao;
 import entity.User;
-
 import javax.swing.*;
 
 public class UserView extends Layout {
@@ -15,22 +15,27 @@ public class UserView extends Layout {
     private JLabel lbl_pass;
     private JPasswordField fld_password;
     private JLabel lbl_role;
-    private JComboBox cmb_user_role;
+    private JComboBox<User.Role> cmb_user_role;
     private JButton btn_update;
     private User user;
     private UserManager userManager;
+    private UserDao userDao;
 
     public UserView(User user) {
         this.user = user;
         this.userManager = new UserManager();
-        // this.brandManager = new BrandManager();
+
         this.add(container);
         this.guiInitialize(300, 500);
 
 
-       for (User brand : this.userManager.findAll()) {
-           this.cmb_user_role.addItem(new ComboItem(user.getId(), brand.getRole()));
+
+
+       for (User user1 : this.userManager.findAll()) {
+           this.cmb_user_role.setModel(new DefaultComboBoxModel<>(User.Role.values()));
       }
+
+
         if (this.user.getId() != 0) {
             this.fld_username.setText(this.user.getUsername());
             this.fld_password.setText(this.user.getPassword());
@@ -44,7 +49,7 @@ public class UserView extends Layout {
 
                     this.fld_username.setText(this.user.getUsername());
                     this.fld_password.setText(this.user.getPassword());
-                    this.cmb_user_role.setSelectedItem(this.user.getRole());
+                    this.cmb_user_role.setSelectedItem(cmb_user_role.getSelectedItem());
 
                     if (this.user.getId() != 0) {
                         result = this.userManager.update(this.user);

@@ -21,6 +21,7 @@ public class Helper {
 
     //showmsg metotu ile alan kontrolü sonrası gelemsi istenen mesajları akıllı hale getirdik
     public static void showMsg(String str) {
+        optionPaneTR();
         String msg;
         String title;
 
@@ -33,6 +34,14 @@ public class Helper {
                 msg = "İşlem başarılı !";
                 title = "Sonuç !";
                 break;
+            case "notFound":
+                msg = "Kayıt bulunamadı !";
+                title = "Bulunamadı !";
+                break;
+            case "error":
+                msg = "Hatalı işlem yaptınız !";
+                title = "Hata !";
+                break;
             default:
                 msg = str;
                 title = "Mesaj";
@@ -40,6 +49,20 @@ public class Helper {
         JOptionPane.showMessageDialog(null, msg, title, JOptionPane.ERROR_MESSAGE);
 
     }
+
+    public static boolean confirm (String str) {
+        optionPaneTR(); // turceye cevirme metotunu cagırıyoruz
+        String msg;
+        if (str.equals("sure")){
+            msg = "Bu işlemi yapmak istediğine emin misin ?";
+        } else {
+            msg = str;
+        }
+        return JOptionPane.showConfirmDialog(null, msg, "Emin misin ? " , JOptionPane.YES_NO_OPTION) == 0 ;
+  //true ise 0, değilse false dondurucek. emin misin diye sordugumuzca cevap veremsini beklciez
+    }
+
+
 
     //alanların boş mu dolu mu kontrolü
     //dısarıdan gelen Jtext fieldi alıyor kontrol için
@@ -73,6 +96,17 @@ public class Helper {
                 return 0;
 
         }
+    }
+
+
+
+
+    //Alt satıkar açılır penceredeki ingilizce are you sure ifadesini ve secenekleri turkceye cevirmek için
+    public static void optionPaneTR() {
+
+        UIManager.put("OptionPane.okButtonText", "Tamam");
+        UIManager.put("OptionPane.yesButtonText", "Evet");
+        UIManager.put("OptionPane.noButtonText", "Hayır");
     }
 
 }

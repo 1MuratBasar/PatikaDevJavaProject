@@ -1,7 +1,12 @@
+import business.UserManager;
+import entity.User;
+import view.EmployeeView;
 import view.LoginView;
 
 public class TurismAgentApp {
     public static void main(String[] args) {
-        LoginView loginView = new LoginView();
+
+        EmployeeView employeeView = new EmployeeView(new User());
+      //  LoginView loginView = new LoginView();
     }
 }

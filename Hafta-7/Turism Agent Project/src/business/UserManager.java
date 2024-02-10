@@ -12,6 +12,7 @@ public class UserManager {
 
     public UserManager() {
         this.userDao = new UserDao();
+
     }
 
     public User findByLogin(String username, String password) {
