@@ -1,0 +1,21 @@
+//projede takip edilmemesi istenen dosyalar
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# logs
+*.log
+*.txt
+
+
+# videos
+*.mp4
+# img
+
+*.jpg
+*.png
+img/
+# packages
