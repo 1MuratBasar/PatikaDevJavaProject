@@ -4,4 +4,4 @@
 
 İlk fronted push denemesi
 
-[lorem ipsam] (http://google.com)
+[lorem ipsum] (http://google.com)
