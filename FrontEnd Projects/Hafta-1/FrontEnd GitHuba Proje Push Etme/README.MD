@@ -1,9 +1,13 @@
-# Deneme
 
-## Alt Bilgi
+*** MarkDown Denemeler ***
 
-İlk fronted push denemesi
+- list item 1
+-item 1
+*italic*
+***bold***
+**baver**
+*item*
 
-[lorem ipsum] (http://google.com)
+[google gitmek için tıkla] (https://google.com)
 
-
+![Lorem Picsum  Gorsel] (https://picsum.photos/200/300) 
